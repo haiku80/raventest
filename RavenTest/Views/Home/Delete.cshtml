@@ -1,0 +1,16 @@
+﻿@model RavenTest.Models.User
+
+@{
+  ViewBag.Title = "Cancella l'utente " + Model.Username;
+}
+
+<h3>Sei sicuro di voler cancellare l'utente @Model.Username?</h3>
+
+@using (Html.BeginForm())
+{
+  <p>
+    <input type="submit" value="Delete" />
+    |
+    @Html.ActionLink("Back to List", "Index")
+  </p>
+}
