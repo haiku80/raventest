@@ -106,3 +106,7 @@ UpgradeLog*.XML
 
 # NuGet
 packages/
+
+# Raven Specific
+App_Data
+Data
