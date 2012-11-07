@@ -1,0 +1,9 @@
+﻿@model RavenTest.Models.ViewModels.SectionViewModel
+
+<div class="editor-field">
+  @Html.HiddenFor(model => model.Id)
+  @Html.HiddenFor(model => model.Name)
+  @Html.HiddenFor(model => model.Url)
+  @Html.CheckBoxFor(model => model.IsActive)
+  @Html.LabelFor(model => model.IsActive, Model.Name)
+</div>

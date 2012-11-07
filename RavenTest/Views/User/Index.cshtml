@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RavenTest.Models.User>
+
+@{
+  ViewBag.Title = "Users List";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Username)
+      </th>
+      <th>
+      @Html.DisplayNameFor(model => model.LastModified)
+      </th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  @foreach (var item in Model)
+  {
+    <tr>
+      <td>
+        <a href="mailto:@item.Email">@item.Username</a>
+      </td>
+      <td>
+        @if (!item.LastModified.HasValue)
+        {
+          <i>Not registered ...</i>
+        }
+        else
+        {
+          @item.LastModified.Value
+        }
+      </td>
+      <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+      </td>
+    </tr>
+  }
+</table>

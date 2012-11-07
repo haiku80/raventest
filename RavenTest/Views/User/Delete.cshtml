@@ -1,10 +1,10 @@
 ﻿@model RavenTest.Models.User
 
 @{
-  ViewBag.Title = "Cancella l'utente " + Model.Username;
+  ViewBag.Title = "Delete user " + Model.Username;
 }
 
-<h3>Sei sicuro di voler cancellare l'utente @Model.Username?</h3>
+<h3>Are you sure you want to delete user <i>@Model.Username</i>?</h3>
 
 @using (Html.BeginForm())
 {

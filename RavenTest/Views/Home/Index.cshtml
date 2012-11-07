@@ -1,21 +1,7 @@
-﻿@model IEnumerable<RavenTest.Models.User>
-
-@{
-  ViewBag.Title = "Lista utenti";
+﻿@{
+  ViewBag.Title = "Welcome!";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<ul>
-  @foreach (var user in Model)
-  {
-    <li>
-      <a href="mailto:@user.Email">@user.Username</a>
-      -
-      @Html.ActionLink("Modifica", "Edit", new { id = user.Id })
-      @Html.ActionLink("Elimina", "Delete", new { id = user.Id })
-    </li>
-  }
-</ul>
-
-@Html.ActionLink("Crea nuovo", "Create")
+<p>This is just a test, but it's very important ...</p>

@@ -1,0 +1,9 @@
+﻿@model RavenTest.Models.ViewModels.UserViewModel
+
+@{
+  ViewBag.Title = "Edit " + Model.User.Username;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Partial("_formData")

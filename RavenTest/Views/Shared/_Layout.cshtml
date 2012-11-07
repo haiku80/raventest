@@ -7,7 +7,21 @@
 
 </head>
 <body>
-  @RenderBody()
+  <div>
+    <h1>Raven Tests</h1>
+    
+    <menu>
+      <ul>
+        <li>@Html.ActionLink("Users", "Index", "User")</li>
+        <li>@Html.ActionLink("Sections", "Index", "Section")</li>
+      </ul>
+    </menu>
+
+    <section>
+      @RenderBody()  
+    </section>
+  </div>
+  
 
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.2.min.js"></script>
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.0/jquery-ui.min.js"></script>

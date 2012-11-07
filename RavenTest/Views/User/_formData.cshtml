@@ -1,0 +1,49 @@
+﻿@model RavenTest.Models.ViewModels.UserViewModel
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Dati obbligatori</legend>
+
+    @Html.HiddenFor(model => model.User.Id)
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.User.Username)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.User.Username)
+      @Html.ValidationMessageFor(model => model.User.Username)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.User.Password)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.User.Password)
+      @Html.ValidationMessageFor(model => model.User.Password)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.User.Email)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.User.Email)
+      @Html.ValidationMessageFor(model => model.User.Email)
+    </div>
+
+    <h3>Active Sections</h3>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.SiteSections)
+    </div>
+
+    <p>
+      <input type="submit" value="Save Changes" />
+    </p>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Back to List", "Index")
+</div>

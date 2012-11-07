@@ -12,15 +12,18 @@ namespace RavenTest
     public override void Load()
     {
       Bind<IDocumentStore>()
-     .ToMethod(context =>
-     {
-       NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
-       var documentStore = new EmbeddableDocumentStore { DataDirectory = "App_Data", UseEmbeddedHttpServer = true, };
-       return documentStore.Initialize();
-     })
-     .InSingletonScope();
+        .ToMethod(context =>
+          {
+            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
+            var documentStore = new EmbeddableDocumentStore { DataDirectory = "App_Data", UseEmbeddedHttpServer = true, };
 
-      Bind<IDocumentSession>().ToMethod(context => context.Kernel.Get<IDocumentStore>().OpenSession()).InRequestScope();
+            return documentStore.Initialize();
+          })
+        .InSingletonScope();
+
+      Bind<IDocumentSession>()
+        .ToMethod(context => context.Kernel.Get<IDocumentStore>().OpenSession())
+        .InRequestScope();
     }
   }
 }
