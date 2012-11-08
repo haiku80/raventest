@@ -1,0 +1,41 @@
+﻿@model RavenTest.Models.BlogPost
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Fields Required</legend>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Title)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Title)
+      @Html.ValidationMessageFor(model => model.Title)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Body)
+    </div>
+    <div class="editor-field">
+      @Html.EditorFor(model => model.Body)
+      @Html.ValidationMessageFor(model => model.Body)
+    </div>
+
+    <div class="editor-label">
+      @Html.LabelFor(model => model.Created)
+      @Html.DisplayFor(model => model.Created)
+      @Html.HiddenFor(model => model.Created)
+      @Html.ValidationMessageFor(model => model.Created)
+    </div>
+
+    <p>
+      <input type="submit" value="Save Changes" />
+    </p>
+  </fieldset>
+}
+
+<div>
+  @Html.ActionLink("Back to List", "Index")
+</div>

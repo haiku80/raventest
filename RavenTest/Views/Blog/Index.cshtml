@@ -1,0 +1,61 @@
+﻿@model IEnumerable<RavenTest.Models.BlogPost>
+
+@{
+  ViewBag.Title = "Blog Post List";
+}
+
+@section featured {
+  <section class="featured">
+    <div class="content-wrapper">
+      <hgroup class="title">
+        <h1>@ViewBag.Title.</h1>
+        <h2>My daily digest</h2>
+      </hgroup>
+    </div>
+  </section>
+}
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+  <tr>
+    <th>
+      @Html.DisplayNameFor(model => model.Title)
+    </th>
+    <th>
+      @Html.DisplayNameFor(model => model.Created)
+    </th>
+    <th>
+      @Html.DisplayNameFor(model => model.LastModified)
+    </th>
+    <th>Options</th>
+  </tr>
+
+  @foreach (var item in Model)
+  {
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => item.Title)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.Created)
+      </td>
+      <td>
+        @if (!item.LastModified.HasValue)
+        {
+          <i>Not registered ...</i>
+        }
+        else
+        {
+          @Html.DisplayFor(modelItem => item.LastModified)
+        }
+      </td>
+      <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+      </td>
+    </tr>
+  }
+
+</table>
