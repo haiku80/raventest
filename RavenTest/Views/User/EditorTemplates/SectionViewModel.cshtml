@@ -5,5 +5,5 @@
   @Html.HiddenFor(model => model.Name)
   @Html.HiddenFor(model => model.Url)
   @Html.CheckBoxFor(model => model.IsActive)
-  @Html.LabelFor(model => model.IsActive, Model.Name)
+  @Html.LabelFor(model => model.IsActive, Model.Name, new { @class = "checkbox" })
 </div>

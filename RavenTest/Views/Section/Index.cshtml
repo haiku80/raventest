@@ -4,7 +4,17 @@
   ViewBag.Title = "Sections List";
 }
 
-<h2>@ViewBag.Title</h2>
+
+@section featured {
+  <section class="featured">
+    <div class="content-wrapper">
+      <hgroup class="title">
+        <h1>@ViewBag.Title.</h1>
+        <h2>Let's see what's next ...</h2>
+      </hgroup>
+    </div>
+  </section>
+}
 
 <p>
   @Html.ActionLink("Create New", "Create")
