@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using MvcMiniProfiler.RavenDb;
+using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Common;
 using Raven.Client;
@@ -16,8 +17,9 @@ namespace RavenTest
           {
             NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
             var documentStore = new EmbeddableDocumentStore { DataDirectory = "App_Data", UseEmbeddedHttpServer = true, };
-
-            return documentStore.Initialize();
+            var iDocumentStore = documentStore.Initialize();
+            Profiler.AttachTo(documentStore);
+            return iDocumentStore;
           })
         .InSingletonScope();
 

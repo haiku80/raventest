@@ -10,6 +10,8 @@ namespace RavenTest.Models
     public string Id { get; set; }
     [Required]
     public string Title { get; set; }
+    [StringLength(30)]
+    public string Subtitle { get; set; }
     [Required]
     [AllowHtml]
     [DataType(DataType.MultilineText)]

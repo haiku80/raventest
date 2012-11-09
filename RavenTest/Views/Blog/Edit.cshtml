@@ -1,0 +1,9 @@
+﻿@model RavenTest.Models.BlogPost
+
+@{
+  ViewBag.Title = "Edit " + Model.Title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Partial("_formData")

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  @this.InitClientTimings()
   <meta charset="utf-8" />
   <title>@ViewBag.Title</title>
   <meta name="viewport" content="width=device-width" />
@@ -53,5 +54,7 @@
   <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
 
   @RenderSection("scripts", false)
+
+  @MiniProfiler.RenderIncludes()
 </body>
 </html>
