@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace RavenTest.Controllers
 {
-  public class BlogController : BaseController
+  public class BlogPostsController : BaseController
   {
-    public BlogController(IDocumentSession documentSession) : base(documentSession) { }
+    public BlogPostsController(IDocumentSession documentSession) : base(documentSession) { }
 
     public ActionResult Index()
     {

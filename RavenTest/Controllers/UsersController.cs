@@ -10,9 +10,9 @@ using System.Web.Mvc;
 
 namespace RavenTest.Controllers
 {
-  public class UserController : BaseController
+  public class UsersController : BaseController
   {
-    public UserController(IDocumentSession documentSession) : base(documentSession) { }
+    public UsersController(IDocumentSession documentSession) : base(documentSession) { }
 
     public ActionResult Index()
     {

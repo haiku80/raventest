@@ -1,0 +1,28 @@
+﻿@model RavenTest.Models.Photo
+
+@{
+  ViewBag.Title = "Upload new photo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Create", "Photos", FormMethod.Post, new { enctype="multipart/form-data" }))
+{
+  @Html.ValidationSummary(true)
+
+  <fieldset>
+    <legend>Fields Required</legend>
+
+    <div class="editor-label">
+      @Html.LabelFor(m => m.Path)
+    </div>
+    <div class="editor-field">
+      <input type="file" name="path" /> 
+      @Html.ValidationMessageFor(m => m.Path)
+    </div>
+
+    <p>
+      <input type="submit" value="Save Changes" />
+    </p>
+  </fieldset>
+}

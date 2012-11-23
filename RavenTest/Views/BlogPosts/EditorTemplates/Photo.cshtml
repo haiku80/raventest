@@ -1,0 +1,7 @@
+﻿@model RavenTest.Models.Photo
+
+<div class="editor-field">
+  @Html.HiddenFor(model => model.Path)
+  <img src="@Model.Path" alt="photo" />
+  @Html.ActionLink("Delete", "Delete", new { controller = "Photo", path = Model.Path })
+</div>

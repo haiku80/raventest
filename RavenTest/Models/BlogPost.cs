@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -22,9 +23,12 @@ namespace RavenTest.Models
     [Display(Name = "Last Modified")]
     public DateTime? LastModified { get; set; }
 
+    public List<Photo> Photos { get; set; }
+
     public BlogPost()
     {
       Created = DateTime.Now;
+      Photos = new List<Photo>();
     }
   }
 }

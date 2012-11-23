@@ -40,6 +40,15 @@
       @Html.ValidationMessageFor(model => model.Created)
     </div>
 
+    @if (!string.IsNullOrEmpty(Model.Id)) {
+      <h3>Photos</h3>
+      <div class="editor-field">
+        @Html.EditorFor(model => model.Photos)
+      </div>
+
+      @Html.ActionLink("Add new photo", "Create", new { controller = "Photos", id = Model.Id })
+    }
+
     <p>
       <input type="submit" value="Save Changes" />
     </p>

@@ -5,9 +5,9 @@ using System.Web.Mvc;
 
 namespace RavenTest.Controllers
 {
-  public class SectionController : BaseController
+  public class SectionsController : BaseController
   {
-    public SectionController(IDocumentSession documentSession) : base(documentSession) { }
+    public SectionsController(IDocumentSession documentSession) : base(documentSession) { }
 
     public ActionResult Index()
     {
